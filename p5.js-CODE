@@ -1,0 +1,38 @@
+let img;
+let cnv;
+function preload() {
+  img = loadImage("assets/IMG_NAME_HERE");
+  //upload file to assets folder, recommended < 800x800 pixels, then replace "IMG_NAME_HERE" with file name and extension!
+}
+
+function setup() {
+  cnv = createCanvas(img.width, img.height);
+  let newCanvasX = (windowWidth - img.width) / 2;
+  let newCanvasY = (windowHeight - img.height) / 2;
+  cnv.position(newCanvasX, newCanvasY);
+  for (let col = 0; col < img.width; col += 2) {
+    for (let row = 0; row < img.height; row += 2) {
+      let xPos = col;
+      let yPos = row;
+      let c = img.get(xPos, yPos);
+      push();
+      translate(xPos, yPos);
+      rotate(radians(random(360)));
+      noFill();
+      stroke(color(c));
+      noiseDetail(0.5, 0.02)
+      strokeWeight(noise(10));
+      curve( 
+        xPos,
+        yPos,    //edit following values however you want to change character of curves
+        sin(xPos / 2) * noise(99),
+        -cos(yPos) * sin(xPos /4) * 20,
+        -noise(48),
+        noise(62),
+        -cos(yPos / 7) * sin(xPos) * noise(80),
+        cos(yPos) * sin(xPos) * 24
+      );
+      pop();
+    }
+  }
+}
