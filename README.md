@@ -1,6 +1,6 @@
 # img.generator-blackmetal
 
-hello! My name is J. Cadogan and this is a p5.js generative art sketch I wrote. I described it on twitter as a program that looks at your code and draws what it sees, but that isn't completely accurate (it was mostly for the bit). The code works by accessing the pixels of an img uploaded to an assets folder and generating curves correlated with the pixel position and color. I've included very basic notes in the actual code, here's a slightly more detailed step-by-step description of how to use this program.
+hello! This is a p5.js generative art sketch I wrote. The code works by accessing the pixels of an img uploaded to an assets folder and generating curves correlated with the pixel position and color. I've included very basic notes in the actual code, here's a slightly more detailed step-by-step description of how to use this program.
 
 CREATE A NEW SKETCH IN p5.js (I used the Web Editor)
 
